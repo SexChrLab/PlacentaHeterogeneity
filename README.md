@@ -24,3 +24,22 @@
 ### 04_analyze_xist
 - From the results of running GATK ASEReadcounter, we want to select variants that are in the XIST region (chrX:73820892-73851867)
 - `subset_for_positions_in_xist.py`: This script selects all of the outputs from GATK ASEReadCounter and returns any variant within the XIST region. 
+
+## B_gtex
+### 01_download_data
+1. Find females in GTEx: `find_females_in_GTEx.py`
+2. Parse GTEx information to subset to different tissues: `parse_GTEx_info.py`
+3. RNA sample ids: `rna_samples_females_final.csv`
+4. DNA sample ids: `wes_samples_females_final`
+
+### 02_strip_reads
+
+### 03_extract_RG
+
+### 04_process_rna
+
+### 05_process_dna
+
+### 06_run_asereadcounter
+
+### 07_analyze_ase
