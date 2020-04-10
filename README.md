@@ -72,3 +72,11 @@
 - Config file: `asereadcounter_config.json`
 
 ### 07_analyze_ase
+- Config file: `analyze_ase_config.json`
+- Snakefile: `analyze_ase.snakefile`
+  - Calculate allele balance (unphased): `calc_allele_balance.py`
+    - rule `calc_allele_balance`
+  - Calculate median allele balance for each individual per tissue
+    - Remove any variant where the total count is less than 10
+    - `calc_median_allele_balance_placenta_decidua.py`
+    - rule `calc_median_allele_balance_per_tissue_chr8` and `calc_median_allele_balance_per_tissue_chrX_nonpars`
