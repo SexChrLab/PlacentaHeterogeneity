@@ -33,6 +33,17 @@
 4. DNA sample ids: `wes_samples_females_final`
 
 ### 02_strip_reads
+1. Strip RNAseq reads
+  1. Use the Python script `generate_json_config_rna.py`
+  2. Use snakefile `strip_rna_read.snakefile`
+2. Strip WES reads
+  1. Use the Python script `generate_json_config_dna.py`
+  2. Use the snakefile `strip_dna_read.snakefile`
+3. QC: unequal number of reads in RNAseq data
+- In some RNAseq samples, the number of R1 reads and R2 reads are unequal. Therefore, I wrote a Python script `count_number_of_reads.py` to count the number of reads
+- The script is implemented in the snakefile `count_number_of_reads.snakefile`
+- Find the samples with unequal number of reads in order to remove them:
+  - `return_samples_unequal_number_of_reads.py`
 
 ### 03_extract_RG
 
