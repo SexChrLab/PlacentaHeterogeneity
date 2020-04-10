@@ -20,3 +20,7 @@
 - Remove any variant where the total count is less than 10
 - `calc_median_allele_balance_placenta_decidua.py`
 - Command line: `run_calc_median_allele_balance_placenta_decidua.sh`
+
+### 04_analyze_xist
+- From the results of running GATK ASEReadcounter, we want to select variants that are in the XIST region (chrX:73820892-73851867)
+- `subset_for_positions_in_xist.py`: This script selects all of the outputs from GATK ASEReadCounter and returns any variant within the XIST region. 
