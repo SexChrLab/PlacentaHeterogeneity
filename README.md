@@ -46,6 +46,14 @@
   - `return_samples_unequal_number_of_reads.py`
 
 ### 03_extract_RG
+1. `cp PlacentaSexDiff/B_gtex/02_strip_reads/strip_rna_read_config.json PlacentaSexDiff/B_gtex/04_process_rna/process_rna_config.json`
+2. `cp PlacentaSexDiff/B_gtex/02_strip_reads/strip_dna_read_config.json PlacentaSexDiff/B_gtex/05_process_dna/process_dna_config.json`
+3. Extract read groups:
+  1. `snakemake --snakefile extract_RG_rna.snakefile`
+  2. `snakemake --snakefile extract_RG_dna.snakefile`
+4. Add to json files for the 04_process_rna step and 05_process_dna step
+  1. `python make_json_for_read_groups_rna.py`
+  2. `python make_json_for_read_groups_dna.py`
 
 ### 04_process_rna
 
