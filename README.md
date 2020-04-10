@@ -67,5 +67,8 @@
   - Therefore, I created another list called `all_dna_samples_without_SM` to contain modified ID `GTEX-111CU-0003`. Use the script `modify_json.py`
 
 ### 06_run_asereadcounter
+- Generate the config file with script `make_json.py`
+- Snakefile: `asereadcounter.snakefile`
+- Config file: `asereadcounter_config.json`
 
 ### 07_analyze_ase
