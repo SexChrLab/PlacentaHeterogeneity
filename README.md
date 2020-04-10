@@ -49,15 +49,22 @@
 1. `cp PlacentaSexDiff/B_gtex/02_strip_reads/strip_rna_read_config.json PlacentaSexDiff/B_gtex/04_process_rna/process_rna_config.json`
 2. `cp PlacentaSexDiff/B_gtex/02_strip_reads/strip_dna_read_config.json PlacentaSexDiff/B_gtex/05_process_dna/process_dna_config.json`
 3. Extract read groups:
-  1. `snakemake --snakefile extract_RG_rna.snakefile`
-  2. `snakemake --snakefile extract_RG_dna.snakefile`
+  - `snakemake --snakefile extract_RG_rna.snakefile`
+  - `snakemake --snakefile extract_RG_dna.snakefile`
 4. Add to json files for the 04_process_rna step and 05_process_dna step
-  1. `python make_json_for_read_groups_rna.py`
-  2. `python make_json_for_read_groups_dna.py`
+  - `python make_json_for_read_groups_rna.py`
+  - `python make_json_for_read_groups_dna.py`
 
 ### 04_process_rna
+- Snakefile: `process_rna.snakefile`
+- Config file: `process_rna_config.json`
 
 ### 05_process_dna
+- Snakefile: `process_dna.snakefile`
+- Config file: `process_dna_config.json`
+- After genotyping, I want to use bcftools in order to subset each VCF file for each individual for running asereadcounter.
+  - However, the problem is that the ID in the list `all_dna_samples` is like this: `GTEX-111CU-0003-SM-58Q95` while the header for the VCF file is like this `GTEX-111CU-0003`.
+  - Therefore, I created another list called `all_dna_samples_without_SM` to contain modified ID `GTEX-111CU-0003`. Use the script `modify_json.py`
 
 ### 06_run_asereadcounter
 
