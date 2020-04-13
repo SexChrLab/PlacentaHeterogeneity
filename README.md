@@ -25,6 +25,15 @@
 - From the results of running GATK ASEReadcounter, we want to select variants that are in the XIST region (chrX:73820892-73851867)
 - `subset_for_positions_in_xist.py`: This script selects all of the outputs from GATK ASEReadCounter and returns any variant within the XIST region. 
 
+### 05_genotype_rnaseq
+- Genotype calling using the RNAseq data
+- Placenta samples only for now 
+1. Snakefile `genotype_rnaseq.snakefile` (config file `genotype_rnaseq_config.json`): use GATK joint genotyping
+- Note that the filtering with VQSR does not work. For now, we are working with the set of raw variants
+2. Snakefile `asereadcounter.snakefile` (config file `asereadcounter_config.json`): run asereadcounter
+3. Snakefile `analyze_ase.snakefile` (config file `asereadcounter_config.json`): calculate allele balance
+4. Python script `calc_median_allele_balance_placenta.py` (command line `run_calc_median_allele_balance_placenta_decidua.sh`): calculate median allele balance for each individual
+
 ## B_gtex
 ### 01_download_data
 1. Find females in GTEx: `find_females_in_GTEx.py`
