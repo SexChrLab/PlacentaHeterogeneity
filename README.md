@@ -34,6 +34,11 @@
 3. Snakefile `analyze_ase.snakefile` (config file `asereadcounter_config.json`): calculate allele balance
 4. Python script `calc_median_allele_balance_placenta.py` (command line `run_calc_median_allele_balance_placenta_decidua.sh`): calculate median allele balance for each individual
 
+### 06_compare_wes_vs_rnaseq_genotype
+- Compare heterozygous and expressed variants identified from using the whole exome data for genotyping versus from using the rnaseq data for genotyping
+- Use the Python script `compute_median_allele_balance_overlap_unique.py` (see bash script `run_compute_median_allele_balance_overlap_unique.sh`)
+- Plotting using R script `compare_wes_rnaseq.R`
+
 ## B_gtex
 ### 01_download_data
 1. Find females in GTEx: `find_females_in_GTEx.py`
