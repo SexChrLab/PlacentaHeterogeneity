@@ -94,3 +94,26 @@
     - Remove any variant where the total count is less than 10
     - `calc_median_allele_balance_placenta_decidua.py`
     - rule `calc_median_allele_balance_per_tissue_chr8` and `calc_median_allele_balance_per_tissue_chrX_nonpars`
+
+### 08_genotype_rnaseq
+- Genotyping calling using the RNAseq data 
+1. Genotyping:
+- Generate the config file: `generate_genotype_rna_json_config.py`
+- Config file: `genotype_rnaseq_config.json`
+- Snakefile: `genotype_rnaseq.snakefile`
+2. Run ASEReadCounter:
+- Generate the config file: `generate_asereadcounter_json_config.py`
+- Config file: `asereadcounter_config.json`
+- Snakefile: `asereadcounter.snakefile`
+3. Analyze ASEReadCounter result:
+- Calculate allele balance for each variant and median allele balance for each individual
+- Snakefile: `analyze_ase.snakefile`
+- Plot to compare median allele balance between GTEX tissues and placenta when using the RNAseq data for genotyping: `compare_violin_gtex_placenta_rnaseq_genotypes.R`
+
+### 09_compare_wes_vs_rnaseq_genotypes
+- Compute median allele balance using variants that overlap between when using the whole exome data for genotyping versus when using the rnaseq data for genotyping
+  - Use Python script `compute_median_allele_balance_overlap_unique.py` (see bash script `run_compute_median_allele_balance_overlap_unique.sh`)
+- Plotting using R script `compare_wes_rnaseq.R` (see bash script `run_compare_wes_rnaseq.sh`)
+
+
+
